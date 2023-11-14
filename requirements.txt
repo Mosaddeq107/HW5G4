@@ -2,3 +2,4 @@ numpy
 pandas
 scipy==1.7.3
 #scipy.signal
+pytest==6.2.5
