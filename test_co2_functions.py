@@ -10,9 +10,3 @@ def test_calculate_peak_frequency():
     data = np.array([1, 2, 3, 4, 5])
     sampling_rate = 1
     assert calculate_peak_frequency(data, sampling_rate) == 0.0
-
-#def test_find_peak_frequency():
-#    X = np.array([1, 2, 3, 4, 5])
-#    actual_peaks = find_peak_frequency(X)
-#    print(f"Actual number of peaks: {actual_peaks}")
-#    assert actual_peaks > 0
