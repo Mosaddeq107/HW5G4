@@ -29,7 +29,7 @@ def discrete_transform(data):
     """
     Parameters
     ----------
-    x : array_like
+    data : array_like
         A complex data vector of length N
 
     Returns
@@ -38,12 +38,13 @@ def discrete_transform(data):
         A complex vector of the same length as x containing the FFT coefficients
     """
     N = len(data)
-    transform = np.zeros(N)
+    transform = np.zeros(N, dtype=np.complex128)
     for k in range(N):
         for j in range(N):
             angle = 2 * np.pi * k * j / N
             transform[k] += data[j] * np.exp(1j * angle)
     return transform
+    
 
 def find_peak_frequency(X):
     """
