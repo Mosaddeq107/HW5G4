@@ -50,7 +50,7 @@ def find_peak_frequency(X):
     Parameters
     ----------
     X : array_like
-        A real or complex data vector representing a signal
+        A real data vector representing a signal
 
     Returns
     -------
@@ -64,6 +64,7 @@ def find_peak_frequency(X):
     peak_indices = signal.argrelextrema(abs_Y, np.greater)[0]
     number_of_peaks = len(peak_indices)
     return number_of_peaks
+
 
 def calculate_frequency(data, sampling_rate):
     """
