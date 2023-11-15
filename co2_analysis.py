@@ -86,3 +86,25 @@ def calculate_frequency(data, sampling_rate):
     frequency = np.fft.fftfreq(N, time_interval)
     return frequency
 
+
+def calculate_peak_frequency(data, sampling_rate):
+    """
+    Parameters
+    ----------
+    data : array_like
+        Time-series data for CO2 concentrations.
+    sampling_rate : int
+        Sampling rate of the data.
+
+    Returns
+    -------
+    float
+        Peak frequency of the CO2 signal.
+    """
+    frequency = calculate_frequency(data, sampling_rate)
+    Y = np.fft.fft(data)
+    half = len(Y) // 2
+    abs_Y = np.abs(Y[:half])
+    peak_index = np.argmax(abs_Y)
+    peak_frequency = frequency[peak_index]
+    return peak_frequency
